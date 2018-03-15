@@ -1,0 +1,83 @@
+# Preview Markdown files from command-line
+# http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal/
+function mdless() {
+  pandoc -s -f markdown -t man "$@" | groff -T utf8 -man | less
+}
+
+# Clean up whiteboard photos
+# https://gist.github.com/lelandbatey/8677901
+function cleanwhiteboard() {
+  convert $1 -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 $2
+}
+
+# Update git author and commit dates of last commit
+function amendgitdate() {
+  GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
+}
+
+function find_unused_files() {
+  source=$1
+  target=$2
+
+  if [ $# -lt 2 ]; then
+    echo 'grepAll <source_dir> <target_dir>'
+  else
+    for filepath in $source/*; do
+      basename=${filepath##*/}
+      #filename=${basename%.*}
+
+      if [ -d "$filepath" ]; then
+        continue
+      fi
+
+      grep -r --exclude-dir=.git "$basename" $target > /dev/null || echo $filepath
+    done
+  fi
+}
+
+function git_rm_list() {
+  if [ $# -lt 1 ]; then
+    echo 'git_rm_list <path_to_list>'
+  else
+    list=$1
+    while read p; do
+        git rm "$p"
+    done <$list
+  fi
+}
+
+# Activate virtualenv if venv folder and binary present
+function activate() {
+  if [ $VIRTUAL_ENV ]; then
+    echo "Virtualenv already activated in this session at $VIRTUAL_ENV"
+  elif [ -d "./venv/" ]; then
+    . ./venv/bin/activate
+  elif [ -d "./python-venv/" ]; then
+    . ./python-venv/bin/activate
+  else
+    echo "Virtualenv not present in this directory."
+    echo "Run 'virtualenv venv' to setup."
+  fi
+}
+
+# Find unicode (non-ascii) characters
+function find_unicode() {
+    grep --color='auto' -P -n "[\x80-\xFF]" $1
+}
+
+# fshow - git commit browser
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+# Diff two JSON files, normalising indentation and sorting keys
+jsondiff() {
+  vimdiff <(jq -S . $1) <(jq -S . $2)
+}

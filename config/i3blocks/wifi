@@ -1,0 +1,21 @@
+#!/bin/bash
+
+INTERFACE="${BLOCK_INSTANCE:-wlan0}"
+
+# Do not display if there is not wireless connection
+[[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit
+
+SSID=$(iwgetid -r)
+QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+
+if [[ $(ifconfig tun0) ]] ; then
+    VPN=
+fi
+
+echo $VPN $SSID # full text
+echo $VPN $SSID # short text
+
+if [[ $QUALITY -lt 40 ]]; then
+    echo "#FF0000"
+fi

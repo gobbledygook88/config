@@ -1,0 +1,38 @@
+#!/usr/bin/python
+import sys
+
+
+def help():
+    print("help")
+    sys.exit(1)
+
+
+def validate(word, indices):
+    indices = set(indices)
+
+    try:
+        indices = {int(i) for i in indices}
+    except:
+        help()
+
+    return indices
+
+
+def run(word, indices):
+    indices = validate(word, indices)
+
+    markers = "".join([
+        "^" if i+1 in indices else " "
+        for i in range(len(word))
+    ])
+
+    return "{}\n{}".format(word, markers)
+
+
+if __name__ == "__main__":
+    args = sys.argv
+
+    if len(args) < 3:
+        help()
+
+    print(run(args[1], args[2:]))
