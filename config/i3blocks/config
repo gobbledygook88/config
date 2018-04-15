@@ -6,7 +6,7 @@ markup=none
 [wifi]
 label=
 command=$HOME/config/config/i3blocks/wifi
-instance=wlp2s0
+instance=wlp1s0
 interval=30
 
 [volume-pulseaudio]
@@ -23,7 +23,3 @@ interval=30
 label=
 command=date '+%Y-%m-%d %H:%M'
 interval=5
-
-[shutdown_menu]
-full_text=
-command=$HOME/config/i3blocks-contrib/shutdown_menu/shutdown_menu -c; echo 
