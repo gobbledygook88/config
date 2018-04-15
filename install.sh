@@ -34,8 +34,6 @@ rsync -avr ./config/ $HOME/.config/
 echo "Moving dotfiles files into position..."
 rsync -av ./dotfiles/ $HOME/
 
-echo "Configuring Solarized..."
-
 echo "Moving wallpapers into position..."
 
 echo "Installing vim plugins..."
