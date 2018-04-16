@@ -27,12 +27,15 @@ sudo apt update && sudo apt install -y \
 
 sudo pip install flake8
 
+echo "Moving dotfiles files into position..."
+rsync -av ./dotfiles/ $HOME/
+
 echo "Moving config files into position..."
 mkdir -p $HOME/.config
 rsync -avr ./config/ $HOME/.config/
 
-echo "Moving dotfiles files into position..."
-rsync -av ./dotfiles/ $HOME/
+mkdir -p $HOME/.local
+rsync -avr ./local/ $HOME/.local/
 
 echo "Moving wallpapers into position..."
 
@@ -65,6 +68,5 @@ echo "Installing Atom (text editor)..."
 command -v atom >/dev/null 2>&1 || echo "Installing atom now..."
 
 echo "Perform the following manual changes..."
-echo "* Change Konsole theme to Solarized Dark"
 echo "* Change Konsole font to Fira Code"
 echo "* Reload i3: Mod1+Shift+r"
