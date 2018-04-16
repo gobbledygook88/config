@@ -17,11 +17,11 @@ git clone https://github.com/gobbledygook88/config
 ```
 
 ## Wallpapers
-- download into directory
-- i3lock only supports png
-- use imagemagick's convert tool
-- `convert /path/tp/image.jpg --resize WxH^ -gravity center -extent WxH /path/to/image.png`
-- use `xrandr | grep '*'` to find screen resolution
+
+The wallpapers directory contains a collection of images.
+
+The install script (currently) has hard-coded filenames for which images to use for the desktop and lockscreen.
+Resizing of images requires `xrandr` (to find the screen resolution) and Imagemagick's `convert` tool.
 
 ## Vim plugins
 

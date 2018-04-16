@@ -37,7 +37,15 @@ rsync -avr ./config/ $HOME/.config/
 mkdir -p $HOME/.local
 rsync -avr ./local/ $HOME/.local/
 
-echo "Moving wallpapers into position..."
+echo "Resizing and configuring wallpapers..."
+DIMENSIONS=$(xrandr | grep '*' | awk '{ print $1 }')
+DESKTOP_SOURCE="wallpapers/mikael_gustafsson_small_memory.png"
+DESKTOP_TARGET="wallpapers/desktop.png"
+LOCKSCREEN_SOURCE="wallpapers/ill_leave_tomorrows_problems_to_tomorrows_me.jpg"
+LOCKSCREEN_TARGET="wallpapers/lockscreen.png"
+echo "Resizing wallpaper images to $DIMENSIONS"
+convert "$DESKTOP_SOURCE" -resize "$DIMENSIONS^" -gravity center -extent "$DIMENSIONS" "$DESKTOP_TARGET"
+convert "$LOCKSCREEN_SOURCE" -resize "$DIMENSIONS^" -gravity center -extent "$DIMENSIONS" "$LOCKSCREEN_TARGET"
 
 echo "Installing vim plugins..."
 AUTOLOAD_DIR=$HOME/.vim/autoload
