@@ -20,9 +20,7 @@ bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec rofi -show window
+bindsym $mod+d exec "dmenu_run -b"
 
 # change focus
 bindsym $mod+j focus left
