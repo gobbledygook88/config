@@ -1,66 +1,45 @@
-Packages:
-- git
-- curl
-- tree
-- htop
-- rofi
-- vim-gtk
-  - vim plugins (see below)
-- i3
-- i3blocks
-- feh
-- xbacklight
-- Google chrome
-- Atom
+Config
+======
 
-Configs:
-- $HOME/.config/i3/config
-- $HOME/.config/i3blocks/config
-- $HOME/.config/rofi/config
+Here is a collection of configuration files which I use to set up a new Kubuntu install.
 
-Dotfiles:
-- .vimrc
-- .bashrc
-- .bash_aliases
-- .bash_function
+All are welcome to fork and adapt to your own distro/preferences.
 
-Fonts:
-- apt install fira-code
-- apt install fonts-font-awesome
+## Installation
 
-Wallpapers:
+Clone the repository, ideally into your `$HOME` directory and run the install script.
+
+Be sure to check the contents of the script before running. `sudo` is required for some commands.
+
+```bash
+git clone https://github.com/gobbledygook88/config
+./config/install.sh
+```
+
+## Wallpapers
 - download into directory
 - i3lock only supports png
 - use imagemagick's convert tool
-- convert /path/tp/image.jpg --resize WxH^ -gravity center -extent WxH /path/to/image.png
-- use xrandr | grep '*' to find screen resolution
+- `convert /path/tp/image.jpg --resize WxH^ -gravity center -extent WxH /path/to/image.png`
+- use `xrandr | grep '*'` to find screen resolution
 
-vim plugins:
+## Vim plugins
+
+The following Vim plugins are installed
+
 - pathogen (https://github.com/tpope/vim-pathogen)
-  - mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 - nerdcommenter (https://github.com/scrooloose/nerdcommenter)
-  - git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 - nerdtree (https://github.com/scrooloose/nerdtree)
-  - git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 - vim-flake8 (https://github.com/nvie/vim-flake8)
-  - sudo pip install flake8
-  - git clone https://github.com/nvie/vim-flake8.git ~/.vim/bundle/vim-flake8
 - vim-fugitive (https://github.com/tpope/vim-fugitive)
-  - git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
-  - vim -u NONE -c "helptags vim-fugitive/doc" -c q
 - YouCompleteMe
-  - sudo apt install build-essential cmake python-dev python3-dev
-  - git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
-  - cd ~/.vim/bundle/YouCompleteMe
-  - git submodule update --init --recursive
-  - ./install.py --clang-completer
 - goyo (https://github.com/junegunn/goyo.vim.git)
-  - git clone https://github.com/junegunn/goyo.vim.git ~/.vim/bundle/goyo.vim
-- fzf.vim (https://github.com/junegunn/fzf.vim.git)
-  - git clone https://github.com/junegunn/fzf.vim.git ~/.vim/bundle/fzf.vim
 
-st
+## st
+
+Originally, I tinkered with st by suckless. Below are the commands to install and apply patches which I'm
+keeping here for safe keeping. It is not installed via the install script.
+
 - deps
   - libx11-dev (xatom.h)
   - libxft-dev (xft.h)
@@ -78,20 +57,8 @@ st
 - install
   - sudo make clean install
 
-session scripts
-- logout
-- suspend
-- shutdown
-- reboot
-
 network
-- wifi
-
-sound
-
-laptop brightness
-- xbacklight
-- need extra step
+- TODO autodetect wifi device name (iwconfig)
 
 lockscreen:
 - i3lock (installed via i3)
@@ -105,6 +72,8 @@ lockscreen:
 xprop: then click on window to get WM_NAME(STRING) [instance], [class]
 
 DESKTOP_SESSION=kde (put in .bashrc)
+
+## Other development tools
 
 python
 - bpython
