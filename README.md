@@ -32,7 +32,7 @@ The following Vim plugins are installed
 - nerdtree (https://github.com/scrooloose/nerdtree)
 - vim-flake8 (https://github.com/nvie/vim-flake8)
 - vim-fugitive (https://github.com/tpope/vim-fugitive)
-- YouCompleteMe
+- YouCompleteMe (https://github.com/Valloric/YouCompleteMe)
 - goyo (https://github.com/junegunn/goyo.vim.git)
 
 ## st
