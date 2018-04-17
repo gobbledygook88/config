@@ -20,6 +20,7 @@ sudo apt update && sudo apt install -y \
     python-dev         \
     python3-dev        \
     python-pip         \
+    ranger             \
     tree               \
     vim-gtk3           \
     xautolock          \
@@ -76,5 +77,4 @@ echo "Installing Atom (text editor)..."
 command -v atom >/dev/null 2>&1 || echo "Installing atom now..."
 
 echo "Perform the following manual changes..."
-echo "* Change Konsole font to Fira Code"
 echo "* Reload i3: Mod1+Shift+r"
