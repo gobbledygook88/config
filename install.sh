@@ -70,6 +70,9 @@ mkdir -p $AUTOLOAD_DIR $BUNDLE_DIR
     ./install.py --clang-completer && \
     cd -
 
+echo "Installing NodeJS and NPM (via NVM)"
+command -v nvm >/dev/null 2>&1 || curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
 echo "Installing Google Chrome..."
 command -v google-chrome >/dev/null 2>&1 || echo "Installing google chrome now..."
 
