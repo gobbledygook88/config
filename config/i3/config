@@ -35,7 +35,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # focus to follow mouse cursor
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # move focused window
 bindsym $mod+Shift+j move left
