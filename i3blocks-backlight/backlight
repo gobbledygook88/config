@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PC=$(xbacklight -get)
+echo "${PC%%.*}%"
