@@ -54,6 +54,10 @@ set cursorline                  " underline the current line, for quick orientat
 set autochdir                   " Set auto change directory
 set mouse=n                     " Enable mouse for Normal mode only
 
+" Turn off bell and visual flash when pressing Escape
+autocmd GUIEnter * set vb t_vb=
+autocmd VimEnter * set vb t_vb=
+
 au BufRead,BufNewFile *.md set filetype=markdown " Recognise .md files as .markdown files for syntax highlighting
 au BufRead,BufNewFile *.less set filetype=less " Recognise .less files as .less files for syntax highlighting
 
