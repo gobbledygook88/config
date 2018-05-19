@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Break script on error
+set -e
+
 echo "Configuring package repositores..."
 grep -v "^#" /etc/apt/sources.list | grep universe >/dev/null 2>&1 || sudo add-apt-repository universe
 
