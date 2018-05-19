@@ -79,3 +79,12 @@ python
 - bpython
 - ipython
 - pudb
+
+## Atom plugins
+
+- atom-ide-ui
+- ide-json
+- ide-typescript
+- ide-python
+- react
+- vim-mode-plus
