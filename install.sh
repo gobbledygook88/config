@@ -10,6 +10,7 @@ echo "Installing system applications..."
 sudo apt update && sudo apt install -y \
     build-essential    \
     cmake              \
+    cmus               \
     curl               \
     feh                \
     fonts-firacode     \
