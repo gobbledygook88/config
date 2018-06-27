@@ -14,6 +14,11 @@ command=$HOME/config/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F 3 -
 interval=30
 signal=1
 
+[backlight]
+label=
+command=$HOME/config/i3blocks-backlight/backlight
+interval=30
+
 [battery]
 command=$HOME/config/i3blocks-contrib/battery/battery
 markup=pango
