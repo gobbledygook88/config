@@ -3,6 +3,13 @@ separator_block_width=15
 color=#F3F4F5
 markup=none
 
+[mediaplayer]
+label=
+command=$HOME/config/i3blocks-contrib/mediaplayer/mediaplayer
+instance=cmus
+interval=5
+signal=10
+
 [wifi]
 label=
 command=$HOME/config/config/i3blocks/wifi
