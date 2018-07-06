@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+INPUT="${1:-Mouse}"
+ACCEL="${2:-1.0}"
+
+ID=$(xinput | grep "$INPUT"| grep -Po '(?<=id=)(\d+)')
+PROPID=$(xinput list-props $ID | grep -Po '(?<=Accel Speed \()(\d+)(?=\))')
+
+xinput set-prop $ID $PROPID $ACCEL
