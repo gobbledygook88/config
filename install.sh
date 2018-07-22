@@ -21,6 +21,7 @@ sudo apt update && sudo apt install -y \
     i3blocks           \
     libx11-dev         \
     libxft-dev         \
+    net-tools          \
     python-dev         \
     python3-dev        \
     python-pip         \
