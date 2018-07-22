@@ -81,3 +81,8 @@ FZF-EOF"
 jsondiff() {
   vimdiff <(jq -S . $1) <(jq -S . $2)
 }
+
+# Determine public IP address
+whatip() {
+  dig +short myip.opendns.com @resolver1.opendns.com
+}
