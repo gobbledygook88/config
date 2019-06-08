@@ -87,15 +87,5 @@ command -v nvm >/dev/null 2>&1 || curl -o- https://raw.githubusercontent.com/cre
 echo "Installing Google Chrome..."
 command -v google-chrome >/dev/null 2>&1 || echo "Installing google chrome now..."
 
-echo "Installing Atom (text editor)..."
-command -v atom >/dev/null 2>&1 || echo "Installing atom now..."
-
-echo "Installing Atom packages..."
-ATOM_INSTALLED_PACKAGES=$(apm list)
-echo "$ATOM_INSTALLED_PACKAGES" | grep "atom-ide-ui" || apm install atom-ide-ui
-echo "$ATOM_INSTALLED_PACKAGES" | grep "ide-typescript" || apm install ide-typescript
-echo "$ATOM_INSTALLED_PACKAGES" | grep "react" || apm install react
-echo "$ATOM_INSTALLED_PACKAGES" | grep "vim-mode-plus" || apm install vim-mode-plus
-
 echo "Perform the following manual changes..."
 echo "* Reload i3: Mod1+Shift+r"
