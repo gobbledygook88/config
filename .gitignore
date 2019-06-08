@@ -1,3 +1,4 @@
 desktop.png
 lockscreen.png
 *.swp
+.DS_Store
