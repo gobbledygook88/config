@@ -99,16 +99,18 @@ match ExtraWhitespace /\s\+$/
 " z= to display list of alternative spellings
 nmap <F4> :setlocal spell! spelllang=en_gb<CR>
 
-" JSHint2 plugin mappings
-nnoremap <silent><F6> :JSHint<CR>
-inoremap <silent><F6> <C-O>:JSHint<CR>
-vnoremap <silent><F6> :JSHint<CR>
-
 " NERDTree mappings
 nmap <F8> :NERDTreeToggle<CR>
 
 " Tagbar plugin mappings
 nmap <F9> :TagbarToggle<CR>
+
+" FZF plugin mappings
+nmap <c-p> :FZF<CR>
+
+" Configure gutentags
+set statusline+=%{gutentags#statusline()}
+let g:gutentags_cache_dir = "~/.cache/tags"
 
 " vim-flake8 -- autorun
 autocmd BufWritePost *.py call Flake8()
@@ -116,15 +118,9 @@ autocmd BufWritePost *.py call Flake8()
 " vim instant markdown
 let g:instant_markdown_slow = 1
 
-" ctrlp
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-" let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
 " Plugin stuff
 call pathogen#infect()       " Enable pathogen
+call pathogen#helptags()
 :command NE NERDTree         " Shortcut for NERDTree
 filetype plugin indent on
 
