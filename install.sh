@@ -82,10 +82,7 @@ echo "Installing fzf..."
 command -v fzf >/dev/null 2>&1 || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 echo "Installing NodeJS and NPM (via NVM)"
-command -v nvm >/dev/null 2>&1 || curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
-echo "Installing Google Chrome..."
-command -v google-chrome >/dev/null 2>&1 || echo "Installing google chrome now..."
+command -v nvm >/dev/null 2>&1 || curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 echo "Perform the following manual changes..."
 echo "* Reload i3: Mod1+Shift+r"
