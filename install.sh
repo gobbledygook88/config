@@ -65,11 +65,12 @@ mkdir -p "$AUTOLOAD_DIR" "$BUNDLE_DIR"
 [ ! -d "$BUNDLE_DIR/fzf.vim"       ] && git clone https://github.com/junegunn/fzf.vim.git "$BUNDLE_DIR/fzf.vim"
 [ ! -d "$BUNDLE_DIR/goyo.vim"      ] && git clone https://github.com/junegunn/goyo.vim.git "$BUNDLE_DIR/goyo.vim"
 [ ! -d "$BUNDLE_DIR/nerdcommenter" ] && git clone https://github.com/scrooloose/nerdcommenter.git "$BUNDLE_DIR/nerdcommenter"
-[ ! -d "$BUNDLE_DIR/nerdtree"      ] && git clone https://github.com/scrooloose/nerdtree.git "$BUNDLE_DIR/nerdtree"
+# [ ! -d "$BUNDLE_DIR/nerdtree"      ] && git clone https://github.com/scrooloose/nerdtree.git "$BUNDLE_DIR/nerdtree"
+[ ! -d "$BUNDLE_DIR/ranger.vim"    ] && git clone git@github.com:francoiscabrol/ranger.vim.git "$BUNDLE_DIR/ranger.vim"
 [ ! -d "$BUNDLE_DIR/vim-flake8"    ] && git clone https://github.com/nvie/vim-flake8.git "$BUNDLE_DIR/vim-flake8"
 [ ! -d "$BUNDLE_DIR/vim-fugitive"  ] && git clone https://github.com/tpope/vim-fugitive.git "$BUNDLE_DIR/vim-fugitive" && \
     vim -u NONE -c "helptags vim-fugitive/doc" -c q
-[ ! -d "$BUNDLE_DIR/vim-gutentags" ] && git clone https://github.com/ludovicchabant/vim-gutentags.git "$BUNDLE_DIR/vim-gutentags"
+# [ ! -d "$BUNDLE_DIR/vim-gutentags" ] && git clone https://github.com/ludovicchabant/vim-gutentags.git "$BUNDLE_DIR/vim-gutentags"
 
 [ ! -d "$BUNDLE_DIR/vim-colors-solarized" ] && git clone https://github.com/altercation/vim-colors-solarized.git "$BUNDLE_DIR/vim-colors-solarized"
 
