@@ -19,6 +19,7 @@ sudo apt update && sudo apt install -y \
     htop               \
     i3                 \
     i3blocks           \
+    imagemagick        \
     libx11-dev         \
     libxft-dev         \
     net-tools          \
@@ -31,7 +32,7 @@ sudo apt update && sudo apt install -y \
     xautolock          \
     xbacklight
 
-sudo pip install flake8
+sudo pip install --user flake8
 
 echo "Moving dotfiles files into position..."
 rsync -av ./dotfiles/ "$HOME/"
