@@ -100,7 +100,12 @@ match ExtraWhitespace /\s\+$/
 nmap <F4> :setlocal spell! spelllang=en_gb<CR>
 
 " NERDTree mappings
-nmap <F8> :NERDTreeToggle<CR>
+" nmap <F8> :NERDTreeToggle<CR>
+"
+" Ranger mappings
+nmap <F8> :RangerCurrentFile<CR>
+let g:NERDTreeHijackNetrw = 0
+let g:ranger_replace_netrw = 1
 
 " Tagbar plugin mappings
 nmap <F9> :TagbarToggle<CR>
@@ -111,6 +116,9 @@ nmap <c-p> :FZF<CR>
 " Configure gutentags
 set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir = "~/.cache/tags"
+
+" Configure YouCompleteMe
+" nnoremap <c-[> :YcmCompleter GoToReferences<CR>
 
 " vim-flake8 -- autorun
 autocmd BufWritePost *.py call Flake8()
