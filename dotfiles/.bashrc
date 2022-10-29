@@ -106,7 +106,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-for file in ~/.{path,bash_prompt,exports,bash_aliases,functions,extra}; do
+for file in ~/.{path,bash_prompt,bash_profile,exports,bash_aliases,functions,extra}; do
         [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -129,8 +129,9 @@ export NVM_DIR="/home/marcus/.nvm"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
-# export PATH="/opt/OpenBLAS:$PATH" # Add OpenBLAS
-# export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:$LD_LIBRARY_PATH
+
+# AWS Workspaces
+export PATH="$PATH:/opt/workspacesclient/"
 
 export PYTHONDONTWRITEBYTECODE=1
 export PYTEST_COV="--cov-report term-missing --cov"
@@ -138,3 +139,6 @@ export PYTEST_COV="--cov-report term-missing --cov"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias flu="docker run -ti --rm eu.gcr.io/fluidly-registry-15304c60/fluidly-cli:latest"
+alias gg="gitpb && GH_HOST=github.com gh pr create -f && gh pr view --web"
