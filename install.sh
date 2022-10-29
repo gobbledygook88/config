@@ -28,8 +28,6 @@ sudo apt update && sudo apt install -y \
 
 # TODO install pyenv
 
-sudo pip3 install --user flake8 jedi
-
 echo "Moving dotfiles files into position..."
 rsync -av ./dotfiles/ "$HOME/"
 
@@ -49,6 +47,10 @@ LOCKSCREEN_TARGET="wallpapers/lockscreen.png"
 echo "Resizing wallpaper images to $DIMENSIONS"
 convert "$DESKTOP_SOURCE" -resize "$DIMENSIONS^" -gravity center -extent "$DIMENSIONS" "$DESKTOP_TARGET"
 convert "$LOCKSCREEN_SOURCE" -resize "$DIMENSIONS^" -gravity center -extent "$DIMENSIONS" "$LOCKSCREEN_TARGET"
+
+echo "Installing vim-plug ..."
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo "Installing fzf..."
 command -v fzf >/dev/null 2>&1 || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
