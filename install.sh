@@ -26,8 +26,6 @@ sudo apt update && sudo apt install -y \
     xbacklight         \
     xclip
 
-# TODO install pyenv
-
 echo "Moving dotfiles files into position..."
 rsync -av ./dotfiles/ "$HOME/"
 
@@ -49,8 +47,7 @@ convert "$DESKTOP_SOURCE" -resize "$DIMENSIONS^" -gravity center -extent "$DIMEN
 convert "$LOCKSCREEN_SOURCE" -resize "$DIMENSIONS^" -gravity center -extent "$DIMENSIONS" "$LOCKSCREEN_TARGET"
 
 echo "Installing vim-plug ..."
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo "Installing fzf..."
 command -v fzf >/dev/null 2>&1 || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
@@ -60,3 +57,5 @@ command -v nvm >/dev/null 2>&1 || curl -o- https://raw.githubusercontent.com/nvm
 
 echo "Perform the following manual changes..."
 echo "* Reload i3: Mod1+Shift+r"
+echo "* Install neovim: https://github.com/neovim/neovim/releases"
+echo "* Install pyenv"
