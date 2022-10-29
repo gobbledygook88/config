@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/marcus/fluidly/credit'
+let g:netrw_dirhist_1='/home/marcus/fluidly/funding-frontend'
+let g:netrw_dirhist_0='/home/marcus/fluidly/python-shared'
+let g:netrw_dirhist_9='/home/marcus/fluidly/credit'
+let g:netrw_dirhist_8='/home/marcus/fluidly/importers/src'
+let g:netrw_dirhist_7='/home/marcus/fluidly/accounting/accounting_controller'
+let g:netrw_dirhist_6='/home/marcus/fluidly/accounting/accounting_api/tests'
+let g:netrw_dirhist_5='/home/marcus/fluidly/data-normalisers/data_normalisers/qbo/tests'
+let g:netrw_dirhist_4='/home/marcus/fluidly/data-warehouse/pipeline/data'
+let g:netrw_dirhist_3='/home/marcus/fluidly/python-shared/fluidly-flask/fluidly/flask'
